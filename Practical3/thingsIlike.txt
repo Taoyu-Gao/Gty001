@@ -1,0 +1,13 @@
+I like tea
+<<<<<<< HEAD
+I like chocolate
+I like listening to music very much
+I like watching movies
+=======
+I don't like watching movies
+I like sleeping
+I like eating
+I like having holidays
+I like playing games
+>>>>>>> Alex
+I like drinking
