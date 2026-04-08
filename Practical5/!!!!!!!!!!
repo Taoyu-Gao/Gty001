@@ -1,0 +1,29 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# 模拟2个月（60天）的睡眠数据
+np.random.seed(0)  # 设置随机种子，保证结果可复现
+days = np.arange(1, 61)  # 天数数组，从1到60
+
+# 模拟每天的睡眠时长：工作日约6-7小时，周末约9小时，并加入一定噪声
+sleep_hours = np.array([
+    6 + np.random.rand() + (2 if (i % 7 == 5 or i % 7 == 6) else 0)  # 周末（索引5,6）多睡2小时
+    for i in range(60)
+]) + np.random.normal(0, 0.5, 60)  # 加入均值为0，标准差为0.5的正态噪声
+
+# 计算7天的滑动平均值
+sleep_series = pd.Series(sleep_hours)
+rolling_avg = sleep_series.rolling(window=7, center=True).mean()
+
+# 绘图
+plt.figure(figsize=(12, 6))
+plt.plot(days, sleep_hours, label='Daily Sleep Hours', color='blue', alpha=0.5)  # 原始数据
+plt.plot(days, rolling_avg, label='7-day Rolling Average', color='red', linewidth=2)  # 滑动平均
+plt.xlabel('days')
+plt.ylabel('sleep_hours（hr）')
+plt.title('2 months Sleep Pattern Analysis')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()

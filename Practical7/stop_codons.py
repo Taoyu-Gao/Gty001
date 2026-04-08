@@ -1,6 +1,7 @@
 import re
+import os
 
-input_file = 'Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa'
+input_file = os.path.join("Practical7", "Saccharomyces_cerevisiae.R64-1-1.cdna.all.fa")
 output_file = 'stop_genes.fa'
 stop_codons = ['TAA', 'TAG', 'TGA']
 
