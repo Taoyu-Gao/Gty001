@@ -1,4 +1,4 @@
-Hello, my name is Fan Yixin.
+Hello, my name is Gao Taoyu.
 I like listening to music.
 I am enjoying learning IBI1 course. 
 I am happy that I can push my repo from Visual Studio Code to GitHub
